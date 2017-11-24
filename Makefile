@@ -18,6 +18,9 @@ validate :
 build : validate set-envs
 	docker-compose build
 
+push :
+		docker-compose push
+
 up : set-envs
 	docker-compose up -d
 
@@ -31,9 +34,3 @@ shell :
 	docker exec -ti $(CONTAINER) /bin/bash
 
 reset : set-envs down up
-
-get-pass :
-	@curl http://$(AUTH_USER):$(AUTH_PASS)@127.0.0.1
-
-get-json :
-	@curl http://$(AUTH_USER):$(AUTH_PASS)@127.0.0.1/json

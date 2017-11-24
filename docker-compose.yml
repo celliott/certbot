@@ -3,7 +3,6 @@ services:
   certbot:
     build: .
     image: ${ORGANIZATION}/${CONTAINER}:${BUILD_TAG}
-    restart: always
     environment:
       - DOMAIN=${DOMAIN}
       - EMAIL=${EMAIL}
