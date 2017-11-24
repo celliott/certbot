@@ -11,12 +11,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - nginx-certs:/etc/letsencrypt
+      - /data/certs:/etc/letsencrypt
     networks:
       - overlay
-
-volumes:
-  nginx-certs:
 
 networks:
     overlay:
