@@ -11,7 +11,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - /data/certs:/etc/letsencrypt
+      - /data/certbot:/etc/letsencrypt
     networks:
       - overlay
 
