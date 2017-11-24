@@ -7,8 +7,16 @@ services:
     environment:
       - DOMAIN=${DOMAIN}
       - EMAIL=${EMAIL}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - nginx-certs:/etc/letsencrypt
     networks:
-      - core
+      - overlay
+
+volumes:
+  nginx-certs:
 
 networks:
-    core:
+    overlay:
